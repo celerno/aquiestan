@@ -1,0 +1,11 @@
+[Unit]
+Description=AquiEstan.org cms app dev
+
+[Service]
+ExecStart=/snap/bin/dotnet /var/www/dotnet/aquiestan.org/bin/aquiestan.org.dll
+SyslogIdentifier=aquiestan.dev
+
+User=chamizo
+Environment=/var/www/dotnet/aquiestan.org/
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description= AquiEstan.org cms app
+
+[Service]
+ExecStart=/snap/bin/dotnet /var/www/dotnet/aquiestan.org/bin/Release/net6.0/aquiestan.org.dll
+
+SyslogIdentifier=aquiestan
+
+User=root
+[Install]
+WantedBy=multi-user.target
