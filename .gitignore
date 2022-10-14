@@ -11,7 +11,7 @@ CHECKLIST.md
 *.sln.docstates
 .vscode/
 
-piranha.*
+piranha*.*
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)
