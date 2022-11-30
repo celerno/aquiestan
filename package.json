@@ -12,6 +12,7 @@
     "gulp-sass": "^5.1.0"
   },
   "dependencies": {
+    "gulp-watch": "^5.0.1",
     "node-sass": "^7.0.3",
     "sass": "^1.55.0"
   }

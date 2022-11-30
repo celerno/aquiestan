@@ -16,6 +16,10 @@
     <PackageReference Include="Piranha.Manager" Version="10.1.0" />
     <PackageReference Include="Piranha.Manager.LocalAuth" Version="10.1.0" />
     <PackageReference Include="Piranha.Manager.TinyMCE" Version="10.1.0" />
+    <Watch
+      Include="**\*.cs;**\*.js;**\*.json;**\*.html;**.*.md; assets\img\**"
+      Exclude="node_modules\**\*;wwwroot\**\*;"
+    />
   </ItemGroup>
 
 </Project>
