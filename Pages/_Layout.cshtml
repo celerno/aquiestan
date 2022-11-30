@@ -12,7 +12,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/assets/css/style.min.css" asp-append-version="true">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['geochart'],
+            'mapsApiKey': 'AIzaSyBeUKJmNNckUtakVTLbbVC2uM8ZP9fuXMI'
+        });
+        google.charts.setOnLoadCallback(drawRegionsMap);
 
+        function drawRegionsMap() {
+            var data = google.visualization.arrayToDataTable([
+                ['Municipio', 'Incidencias'],
+                ['Hermosillo, Sonora', 15],
+                ['Caborca, Sonora', 10],
+                ['Santa Ana, Sonora', 5],
+                ['Guaymas, Sonora', 10],
+                ['Tijuana, Baja California', 7],
+                ['Rosarito, Baja California', 4],
+                ['Zapopan, Jalisco', 7],
+                ['Mexicali, Baja California', 1]
+            ]);
+
+             var options = {
+                region: 'MX',
+                displayMode: 'markers',
+                colorAxis: { colors: ['#ffb200', '#bd9e5a'] },
+                backgroundColor: '#edfd94',
+                datalessRegionColor: '#ffe460',
+                defaultColor: '#ffe460',
+                legend: { textStyle: { color: '#bd9e5a', fontSize: 16 } },
+                enableRegionInteractivity: true
+              };
+
+            var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+            chart.draw(data, options);
+        }
+    </script>
     @RenderSection("head", required: false)
 </head>
 
@@ -36,7 +72,7 @@
             </div>
         </div>
     </nav>
-
+    <div id="regions_div" style="height: 50vh; width:100vw" title="Datos no v&aacute;lidos en versi&oacute;n beta."></div>
     @RenderBody()
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
